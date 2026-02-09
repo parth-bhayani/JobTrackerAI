@@ -1,0 +1,148 @@
+.dashboard-page {
+    min-height: calc(100vh - 80px);
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xl);
+}
+
+.dashboard-title h1 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.dashboard-title p {
+    color: var(--text-muted);
+}
+
+/* Status Filters */
+.status-filters {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.status-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.status-filter:hover {
+    border-color: var(--primary);
+}
+
+.status-filter.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.status-filter.active .status-label,
+.status-filter.active .status-count {
+    color: white;
+}
+
+.status-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.status-count {
+    padding: 2px 8px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.status-filter.active .status-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Status-specific colors */
+.status-filter.applied:not(.active):hover {
+    border-color: var(--primary);
+}
+
+.status-filter.interview:not(.active):hover {
+    border-color: var(--warning);
+}
+
+.status-filter.offer:not(.active):hover {
+    border-color: var(--success);
+}
+
+.status-filter.rejected:not(.active):hover {
+    border-color: var(--danger);
+}
+
+/* Applications List */
+.applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* States */
+.dashboard-loading,
+.dashboard-error,
+.dashboard-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-xl);
+}
+
+.dashboard-loading {
+    gap: var(--spacing-md);
+    color: var(--text-muted);
+}
+
+.dashboard-error p {
+    color: var(--danger);
+    margin-bottom: var(--spacing-md);
+}
+
+.empty-icon {
+    font-size: 3rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.dashboard-empty h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.dashboard-empty p {
+    max-width: 400px;
+}
+
+@media (max-width: 640px) {
+    .status-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: var(--spacing-sm);
+    }
+
+    .status-filter {
+        flex-shrink: 0;
+    }
+}

@@ -1,0 +1,219 @@
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+    gap: var(--spacing-xl);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.logo-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.logo-ai {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.nav-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background: var(--card-hover);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    border-left: 1px solid var(--card-border);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.user-email {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 480px;
+    margin: var(--spacing-md);
+    animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.modal-header h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.125rem;
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+}
+
+/* Dropzone */
+.dropzone {
+    border: 2px dashed var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.dropzone:hover,
+.dropzone.active {
+    border-color: var(--primary);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.dropzone.success {
+    border-color: var(--success);
+    background: var(--success-bg);
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    color: var(--text-muted);
+}
+
+.success-icon {
+    font-size: 2.5rem;
+    color: var(--success);
+}
+
+.dropzone p {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.dropzone-hint {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.dropzone-formats {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--spacing-sm);
+}
+
+.upload-error {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--danger-bg);
+    color: var(--danger);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.delete-resume-btn {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .user-email {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "job-tracker-server",
+    "version": "1.0.0",
+    "description": "AI-powered job tracking platform backend",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node --watch index.js"
+    },
+    "dependencies": {
+        "@fastify/cors": "^11.2.0",
+        "@fastify/multipart": "^9.4.0",
+        "@fastify/swagger": "^9.6.1",
+        "@fastify/swagger-ui": "^5.2.5",
+        "@langchain/core": "^0.1.45",
+        "@langchain/langgraph": "^0.0.19",
+        "@langchain/openai": "^0.0.25",
+        "dotenv": "^16.4.1",
+        "fastify": "^5.7.4",
+        "langchain": "^0.1.25",
+        "pdf-parse": "^1.1.1",
+        "uuid": "^9.0.0"
+    }
+}
